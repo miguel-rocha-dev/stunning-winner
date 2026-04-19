@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #0568a5;
+}
+
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    background-color: #00297c;
+}
+
+.div-logo-barra-lateral{
+    background-color: #0568a5;
+}
+
+.botao-lateral{
+    display: flex;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
+    padding: 10px;
+}
+
+.texto-botao{
+    color:white;
+    font-size: 10.5pt;
+}
+
+.imagem-botao-lateral{
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.opcao-cliente{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin:3px 0px 3px 50px;
+    padding:10px;
+
+}
+.opcao-cliente:hover{
+    background-color: #00569e;
+    transition: 0.25s ease;
+    
+}
+
+.logo-barra-lateral{
+    filter: invert(100%);
+    height: auto;
+    width: 12vw;
+    margin: 35px 0px 7px 50px;
+}
+
+.linha{
+    background-color: black;
+    height: 1px;
+    width: 97%;
+    border:none;
+    opacity: 0.2;
+}
+
+.topico-itens{
+    margin:5px 0px 3px 60px;
+    color: white;
+}
+
+.conteudo-principal{
+    background-color: white;
+    flex-grow: 1;
+    border-top-left-radius: 37pt;
+}
+.opcao-cliente.ativo{
+    border-left: 6px solid #0071bc;
+    box-shadow: inset 0 0 100px #00569e;
+}
+
+#orcamento{
+    position: relative;
+}
+
+.menu-link{
+    display: none;
+    position: absolute;
+    top: 0%; 
+    left: 100%;
+    background: #0071bc;
+    padding: 10px;
+    z-index: 10;
+    min-width: 200px;
+    
+}
+
+#orcamento:hover .menu-link{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.menu-link .texto-botao{
+    white-space: nowrap;
+}
+.menu-opcao{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 3px 0px 3px 0px;
+    padding: 10px;
+}
+.menu-opcao:hover{
+    background-color: #00569e;
+    transition: 0.25s ease;
+}
+.menu-linha{
+    filter: opacity(0.11)
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input{
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border-radius: 3pt;
+    display: inline;
+    padding: 5px;
+    width: fit-content;
+    font-size: 13pt;
+    font-weight: 700;
+    
+}
+.dados{
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 1%;
+    width: 741px;
+}
+.cnpj{
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 1%;
+}
+
+.categoria{
+    font-weight: 700;
+    font-size: 16.6pt;
+}
+.conteudo{
+    margin: 9% 0 0 5%;
+}
+
+.container-form{
+    background-color: #f0f0f0;
+    margin-top: 10px;
+}
+

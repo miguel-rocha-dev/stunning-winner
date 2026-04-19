@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Dashboard{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+
+<div class="barra-lateral">
+
+    <div class="div-logo-barra-lateral">
+        <img src="{{ url_for('static', filename='img/logo_samear.png') }}" class="logo-barra-lateral">
+    </div>
+
+    <a href="{{ url_for('index') }}" class="opcao-cliente {%block home %} {%endblock %}">
+        <img src="{{url_for('static', filename='img/home.png')}}" class="imagem-botao-lateral">
+        <span class="texto-botao">Home</span>
+    </a>
+
+    <a href="{{ url_for('adicionar_cliente') }}" class="opcao-cliente {% block adicionar_cliente %} {% endblock %}" >
+        <img src="{{ url_for('static', filename='img/clientespng.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">Adicionar Cliente</span>
+    </a>
+
+    <a href="{{ url_for('remover_cliente') }}" class="opcao-cliente {% block remover_cliente %} {% endblock %}">
+        <img src="{{ url_for('static', filename='img/clientespng.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">Remover Cliente</span>
+    </a>
+
+    <hr class="linha">
+
+    <span class="topico-itens">Serviços</span>
+
+<div id="orcamento">
+        <div class="opcao-cliente {% block orcamento %} {% endblock %}">
+            <img src="{{ url_for('static', filename='img/dinheiro.png') }}" class="imagem-botao-lateral">
+            <span class="texto-botao">Realizar Orçamento</span>
+        </div>
+            <div class="menu-link">
+                <a  href="{{url_for('elaborar_proposta')}}"class="menu-opcao">
+                    <img src="{{url_for('static', filename='img/proposta_site.png')}}" class="imagem-botao-lateral">
+                    <span class="texto-botao">Elaborar Proposta</span>
+                </a>
+                <hr class="menu-linha">
+                <a class="menu-opcao">
+                    <img src="{{url_for('static', filename='img/perfil+.png')}}" class="imagem-botao-lateral">
+                    <span class="texto-botao">Adicionar Cliente</span>
+                </a>
+            </div>
+        </a>
+    </div>    
+    <a href="{{ url_for('estoque') }}" class="opcao-cliente {% block estoque %} {% endblock %}">
+        <img src="{{ url_for('static', filename='img/estoque.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">Consultar Estoques</span>
+    </a>
+
+    <hr class="linha">
+
+    <span class="topico-itens">Empresas</span>
+
+    <a href="{{ url_for('adicionar_empresa') }}" class="opcao-cliente {% block adicionar_empresa %} {% endblock %}">
+        <img src="{{ url_for('static', filename='img/bolsa-dinheiro.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">Adicionar empresa ao território</span>
+    </a>
+
+    <a href="{{ url_for('remover_empresa') }}" class="opcao-cliente {% block remover_empresa %} {% endblock %}">
+        <img src="{{ url_for('static', filename='img/estoque.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">Remover empresa do território</span>
+    </a>
+
+    <a href="{{ url_for('alterar_empresa') }}" class="opcao-cliente {% block alterar_empresa %} {% endblock %}">
+        <img src="{{ url_for('static', filename='img/estoque.png') }}" class="imagem-botao-lateral">
+        <span class="texto-botao">alterar empresas do território</span>
+    </a>
+</div>
+
+
+
+<div class="conteudo-principal">
+
+{% block conteudo %}
+<!-- Conteúdo da página aparece aqui -->
+{% endblock %}
+
+</div>
+
+
+
+</body>
+</html>

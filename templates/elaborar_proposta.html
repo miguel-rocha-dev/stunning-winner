@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Elaborar proposta
+{% endblock %}
+
+{% block orcamento %}ativo{% endblock %}
+
+{% block conteudo %}
+<div class="conteudo" >
+
+    <p class="categoria">Informações do Cliente</p>
+    <form action="/proposta" method="POST">
+        <div class="form">
+            <div class="input">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" class="dados" placeholder="Nome fantasia cliente" name="cliente" required>
+            </div>
+            <div class="input">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" class="dados" placeholder="Avenida nome, 1234 - bairro" name="endereco" required>
+            </div>
+            <div class="input">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="CNPJ" class="cnpj" placeholder="12.345.678/0001-99" name="cnpj" required>
+            </div>
+        </div>
+        <label for="qtdcamara">Quantidade de Câmaras</label>
+        <select id="qtdcamara" name="qtdcamara" required>
+            <option value="" disabled selected>Selecione a Quantidade</option>
+            <option value="1">1 Câmara</option>
+            <option value="2">2 Câmaras</option>
+            <option value="3">3 Câmaras</option>
+        </select>
+
+        <p class="categoria" hidden>Informações da Câmara</p>
+        
+        
+        <div id="camaras-container"></div>
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="container-form" id="modelo-camara" hidden>
+            <p>Medidas Externas (M):</p>
+            <div class="input-camara">
+                <label for="nome-prod1" >Produto:</label>
+                <input id="nome-prod1" type="text" placeholder="Digite o nome do produto" step="any">
+            </div>
+            <div class="input-camara">
+                <label for="tipo-prod1">Tipo de produto:</label>
+                <select id="tipo-prod1" >
+                    <option value='' selected disabled>Selecione o tipo do produto</option>
+                    <option value="Congelado">Congelado</option>
+                    <option value="Resfriado">Resfriado</option>
+                </select>
+            </div>
+            <div class="input-camara">
+                <label for="mov-diaria1">Mov Diária(h):</label>
+                <input type="number" id="mov-diaria1" step="any" >
+
+                <label for="operacao1">Tempo Operação(h):</label>
+                <input type="number" id="operacao1" step="any" >
+            </div>
+
+            <div class="input-camara">
+                <label for="comprimento1">comprimento:</label>
+                <input type="number" id="comprimento1" step="any" >
+
+                <label for="largura1">Largura:</label>
+                <input type="number" id="largura1" step="any" >
+                <label for="altura1" >Altura:</label>
+                <input type="number" id="altura1" step="any" >
+            </div>
+            <p>Isolamento Térmico:</p>
+            <div class="input-camara">
+                <label for="tipo-isolamento1">Material de Isolamento:</label>
+                <select id="tipo-isolamento1" >
+                    <option value="" selected disabled>Selecione o tipo de isolamento</option>
+                    <option value="P.I.R">P.I.R</option>
+                    <option value="E.P.S">E.P.S</option>
+                </select>
+                <label for="espessura-isolamento1">Espessura do Isolamento:</label>
+                <select id="espessura-isolamento1"  >
+                    <option value="" selected disabled>Selecione a espessura do material</option>
+                    <option value="120mm">120mm</option> #P.I.R CONGELADO
+                    <option value="70mm">70mm</option> #P.I.R RESFRIADO
+                    <option value="100mm">100mm</option> #E.P.S RESFRIADO
+                    <option value="200mm">200mm</option> #E.P.S CONGELADO
+                </select>
+            </div>
+            <div class="input-camara">
+                <label for="temp-entrada1">Temp. Entrada:</label>
+                <input id="temp-entrada1" type="number" step="any" >
+                <label for="temp-saida1">Temp. Saída:</label>
+                <input id="temp-saida1" type="number" step="any" >
+            </div>
+            <p>Quantidade e tipo de materiais:</p>
+            <div class="input-camara">
+                <label for="qtd-unidcondensadora1">Quantidade de Unidades Condensadoras:</label>
+                <input type="number" id="qtd-unidcondensadora1" step="any">
+                <label for="qtd_portas1">Quantidade de Portas:</label>
+                <input type="number" id="qtd-portas1" step="any">
+            </div>
+            <div class="input-camara">
+                <label for="qtd_evaporadores1">Quantidade de Evaporadores:</label>
+                <input type="number" id="qtd-evaporadores1" step="any">
+                <label for="tipo-porta1">Tipo de porta:</label>
+                <select id="tipo-porta1">
+                    <option value="" disabled selected>Selecione o tipo de porta</option>
+                    <option value="ESQUERDA->DIREITA">Porta de correr ESQUERDA -> DIREITA</option>
+                    <option value="DIREITA->ESQUERDA">Porta de correr DIREITA -> ESQUERDA</option>
+                    <option value="Bater">Porta de Bater</option>
+                </select>
+            </div>
+        </div>
+</div>
+    
+    {% endblock %}
