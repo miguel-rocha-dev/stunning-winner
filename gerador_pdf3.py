@@ -414,7 +414,45 @@ def criar_proposta2camara(nome_arquivo, dados, dados_cliente):
     paragrafo(c, 12.9, 16.9 * cm, 3.7 * cm, 2.1 * cm, height - 7.4 * cm - 3.7 * cm, piso_eps)
     
 
-    #começar a criar a página de explicação do material
+    #garantias
+    c.showPage()
+    cabecalho_indice(c, "static/img/logistica.png", "LOGÍSTICA", "E GARANTIA" )
+    c.setFillColor(HexColor("#000000"))
+    c.setFont("Montserrat-Bold", 17.8)
+    c.drawString(2 * cm , height - 5.9 * cm - 17.8, "1. Informações Gerais:")
+    c.drawString(2 * cm , height - 14.3 * cm - 17.8, "2. Garantias:")
+    
+    c.setFont("Montserrat-Bold", 14.8)
+    c.drawString(2.6 * cm , height - 7 * cm - 14.8, "1.1 Responsabilidades do cliente:")
+    c.drawString(2.6 * cm , height - 15.3 * cm - 14.8, "2.1 Materiais:")
+    
+    c.setFont("Montserrat-Bold", 12.9)
+    c.drawString(3 * cm, height - 8 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 0.7 * cm, 3.4 * cm, height - 7.9 * cm - 0.7 * cm, "Materiais e serviços do contrapiso para montagem dos painéis.")
+    
+    c.drawString(3 * cm, height - 8.8 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.4 * cm, height - 8.7 * cm - 1.2 * cm, "Materiais e serviços para suporte/casa de máquinas ou estrutura para a unidade condensadora.")
+    
+    c.drawString(3 * cm, height - 10 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.4 * cm, height - 10 * cm - 1.2 * cm, "Todos os serviços e materiais para fixação e drenagem dos evaporadores de ar.")
+    
+    c.drawString(3 * cm, height - 11.3 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.4 * cm, height - 11.3 * cm - 1.2 * cm, "Todos os serviços e materiais para o ponto de força próximo ao quadro de comando das câmaras frias.")
+    
+    c.drawString(3 * cm, height - 12.6 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.4 * cm, height - 12.6 * cm - 1.2 * cm, "Quaisquer serviços e materiais de engenharia civil e outros (impermeabilização, alvenaria, pintura, forro, elétrica e hidráulica).")
+    
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3 * cm, height - 16.2 * cm - 1.2 * cm, "Estão cobertos por uma garantia legal pelo período de 12 (doze) meses, contados a partir da data de emissão da nota fiscal, sendo:")
+    
+    c.drawString(3.4 * cm, height - 17.8 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.8 * cm, height - 17.7 * cm - 1.2 * cm, "A garantia só é válida para defeitos de fabricação, devidamente comprovados nos componentes.")
+    
+    c.drawString(3.4 * cm, height - 19.1 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.7 * cm, 3.8 * cm, height - 19.1 * cm - 1.7 * cm, "Não fazem parte deste termo de garantia: defeitos inerentes à falta de manutenção, manutenção inadequada, imperícia ou avarias devido ao mau uso.")
+    
+    c.drawString(3.4 * cm, height - 21 * cm - 12.9, "•")
+    paragrafo(c, 12.9, 16.1 * cm, 1.2 * cm, 3.8 * cm, height - 20.4 * cm - 1.2 * cm, "Observações: Exceto componentes elétricos e eletrônicos.")
+    
     
     #cria o pdf e salva
     c.save()
